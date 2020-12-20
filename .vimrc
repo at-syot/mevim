@@ -1,11 +1,10 @@
-set runtimepath+=~/.vim_runtime
-
-source ~/.vim_runtime/vimrcs/basic.vim
-
-try
-source ~/.vim_runtime/my_configs.vim
-catch
-endtry
+" set runtimepath+=~/.vim_runtime
+" source ~/.vim_runtime/vimrcs/basic.vim
+" 
+" try
+" source ~/.vim_runtime/my_configs.vim
+" catch
+" endtry
 
 call plug#begin('~/.vim/plugged')
 
@@ -24,15 +23,28 @@ Plug 'airblade/vim-rooter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " color
-Plug 'arcticicestudio/nord-vim'
+Plug 'pineapplegiant/spaceduck'
 
 call plug#end()
 
-colorscheme nord
+" colorscheme desert
+colorscheme spaceduck
 
 set nu
 set autoindent
 set cmdheight=2
+
+let mapleader = ","
+
+map <leader>h :bprevious<cr>
+map <leader>l :bnext<cr>
+
+map <leader>tw :tabnext<cr>
+map <leader>te :tabp<cr>
+map <leader>tn :tabnew<cr>
+map <leader>tc :tabclose<cr>
+
+map <leader>ff :FZF<cr>
 
 " cursor
 let &t_SI.="\e[5 q" "SI = INSERT mode
