@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/Users/oathive/Dev/me/MNote'
+let g:netrw_dirhist_5='/Users/oathive'
+let g:netrw_dirhist_4='/Users/oathive/Dev/me/MNote'
+let g:netrw_dirhist_3='/Users/oathive/Dev/Hive/hive_pos_ios_socket9_feature/hive POS/hive POS/Scenes/Delivery'
+let g:netrw_dirhist_2='/Users/oathive/Dev/Hive/hive_pos_ios_socket9_feature/hive POS/hive POS/Model'
+let g:netrw_dirhist_1='/Users/oathive/Dev/Hive/hive_dev_ops/elasticsearch_kibana/upload_address_script/data'
+let g:netrw_dirhist_0='/Users/oathive/Dev/Hive/hive_dev_ops/elasticsearch_kibana/upload_address_script'
+let g:netrw_dirhist_9='/Users/oathive/Dev/Hive/hive_dev_ops/elasticsearch_kibana'
+let g:netrw_dirhist_8='/Users/oathive/Dev/Hive/hive_dev_ops/elasticsearch_kibana/upload_address_script'
+let g:netrw_dirhist_7='/Users/oathive/Dev/Hive/hive_dev_ops/elasticsearch_kibana'
