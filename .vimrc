@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/syntastic'
 
 Plug 'w0rp/ale'
@@ -19,16 +20,22 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
 
+Plug 'tpope/vim-surround'
+
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " color
-Plug 'pineapplegiant/spaceduck'
+" Plug 'yuqio/vim-darkspace'
 
 call plug#end()
 
 " colorscheme desert
-colorscheme spaceduck
+" colorscheme slate
+
+" set background=dark
+" set termguicolors
+" colorscheme darkspace
 
 set nu
 set autoindent
@@ -45,6 +52,9 @@ map <leader>tn :tabnew<cr>
 map <leader>tc :tabclose<cr>
 
 map <leader>ff :FZF<cr>
+map <leader>ss :e .<cr>
+
+map <leader>cf :<C-S-w><cr>
 
 " cursor
 let &t_SI.="\e[5 q" "SI = INSERT mode
