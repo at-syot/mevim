@@ -13,7 +13,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/syntastic'
 
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'sheerun/vim-polyglot'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -26,16 +27,16 @@ Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " color
-" Plug 'yuqio/vim-darkspace'
+Plug 'yuqio/vim-darkspace'
 
 call plug#end()
 
 " colorscheme desert
 " colorscheme slate
 
-" set background=dark
-" set termguicolors
-" colorscheme darkspace
+set background=dark
+set termguicolors
+colorscheme darkspace
 
 set nu
 set autoindent
@@ -55,6 +56,11 @@ map <leader>ff :FZF<cr>
 map <leader>ss :e .<cr>
 
 map <leader>cf :<C-S-w><cr>
+
+" golang
+map <leader>gd :GoDoc<cr>
+map <leader>gi :GoImports<cr>
+map <leader>gr :GoRun<cr>
 
 " cursor
 let &t_SI.="\e[5 q" "SI = INSERT mode
