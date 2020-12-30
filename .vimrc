@@ -13,7 +13,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/syntastic'
 
-" Plug 'w0rp/ale'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'dense-analysis/ale'
 Plug 'sheerun/vim-polyglot'
 
@@ -34,6 +34,10 @@ call plug#end()
 
 " colorscheme desert
 " colorscheme slate
+
+set hidden
+
+set lsp=3
 
 set background=dark
 set termguicolors
@@ -64,6 +68,16 @@ map <leader>gd :GoDoc<cr>
 map <leader>gi :GoImports<cr>
 map <leader>gr :GoRun<cr>
 
+" prettier
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+
+" for js 
+let b:ale_fixers=['prettier', 'eslint']
+let g:ale_fix_on_save = 1
+
+let g:ale_sign_error = '🥵'
+let g:ale_sign_warning = '😏'
 
 " from this blog
 " https://www.chrisatmachine.com/Neovim/08-fzf
@@ -108,9 +122,4 @@ let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 
-" for js 
-let b:ale_fixers=['prettier', 'eslint']
-let g:ale_fix_on_save = 1
 
-let g:ale_sign_error = '🥵'
-let g:ale_sign_warning = '😏'
