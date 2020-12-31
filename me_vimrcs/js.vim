@@ -1,12 +1,10 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/syntastic'
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'dense-analysis/ale'
 Plug 'sheerun/vim-polyglot'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -54,19 +52,6 @@ map <leader>fg :Rg<cr>
 map <leader>ss :e .<cr>
 
 map <leader>cf :<C-S-w><cr>
-
-" golang
-map <leader>gd :GoDoc<cr>
-map <leader>gi :GoImports<cr>
-map <leader>gr :GoRun<cr>
-
-
-" for js 
-let b:ale_fixers=['prettier', 'eslint']
-let g:ale_fix_on_save = 1
-
-let g:ale_sign_error = '🥵'
-let g:ale_sign_warning = '😏'
 
 " from this blog
 " https://www.chrisatmachine.com/Neovim/08-fzf
