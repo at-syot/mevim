@@ -4,8 +4,11 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/syntastic'
+Plug 'itchyny/lightline.vim'
 
-Plug 'dense-analysis/ale'
+" from js vim
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+" Plug 'dense-analysis/ale'
 Plug 'sheerun/vim-polyglot'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -13,32 +16,65 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
 
 Plug 'tpope/vim-surround'
+Plug 'yggdroot/indentline'
 Plug 'burntsushi/ripgrep'
 
 " autocomplete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', { 'tag': 'v0.0.80' }
 
 " color
 Plug 'yuqio/vim-darkspace'
+Plug 'tomasiser/vim-code-dark'
+Plug 'jacoborus/tender.vim'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'mhartington/oceanic-next'
 
 call plug#end()
-
-" colorscheme desert
-" colorscheme slate
 
 set hidden
 
 set lsp=3
 
-set background=dark
-set termguicolors
-colorscheme darkspace
+" colorscheme desert
+" colorscheme slate
 
+" set background=dark
+" set termguicolors
+"
+" colorscheme darkspace
+" colorscheme codedark
+
+set background=light    " [light, dark]
+colorscheme PaperColor
+
+" colorscheme tender 
+" let macvim_skip_colorscheme=1
+
+" set termguicolors
+" colorscheme OceanicNext
+
+set tabstop=2
+set shiftwidth=2
 set nu
 set autoindent
 set cmdheight=2
 
+" lightline
+set laststatus=2
+
+" indentLine char
+" set list
+" set lcs=tab:\┊\ 
+
 let mapleader = ","
+
+map <leader>tt :terminal<cr>
+map <leader>sp :split<cr>
+map <leader>vsp :vertical split<cr>
+map <leader>rr :resize +10<cr>
+map <leader>rt :resize -10<cr>
+map <leader>vr :vertical resize +10<cr>
+map <leader>vrt :vertical resize -10<cr>
 
 map <leader>h :bprevious<cr>
 map <leader>l :bnext<cr>
@@ -57,7 +93,11 @@ map <leader>cf :<C-S-w><cr>
 " golang
 map <leader>gd :GoDoc<cr>
 map <leader>gi :GoImports<cr>
-map <leader>gr :GoRun<cr>
+map <leader>gr :GoReferrers<cr>
+
+" js prettier
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 
 " from this blog
 " https://www.chrisatmachine.com/Neovim/08-fzf
